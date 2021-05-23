@@ -449,8 +449,44 @@
     <index_tablespace/>
     <attributes>
       <attribute>
+        <code>FORCE_IDENTIFIERS_TO_LOWERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>FORCE_IDENTIFIERS_TO_UPPERCASE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>IS_CLUSTERED</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
         <code>PORT_NUMBER</code>
         <attribute>3306</attribute>
+      </attribute>
+      <attribute>
+        <code>PRESERVE_RESERVED_WORD_CASE</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>QUOTE_ALL_FIELDS</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>STREAM_RESULTS</code>
+        <attribute>Y</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_BOOLEAN_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>SUPPORTS_TIMESTAMP_DATA_TYPE</code>
+        <attribute>N</attribute>
+      </attribute>
+      <attribute>
+        <code>USE_POOLING</code>
+        <attribute>N</attribute>
       </attribute>
     </attributes>
   </connection>
@@ -505,6 +541,56 @@
       <to>ies2014</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>Set session variables</from>
+      <to>2018_DM_CURSO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Set session variables</from>
+      <to>2018_DM_IES</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2018_DM_CURSO</from>
+      <to>2017_DM_CURSO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2018_DM_IES</from>
+      <to>2017_DM_IES</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2017_DM_CURSO</from>
+      <to>2016_DM_CURSO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2017_DM_IES</from>
+      <to>2016_DM_IES</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2016_DM_CURSO</from>
+      <to>2015_DM_CURSO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2016_DM_IES</from>
+      <to>2015_DM_IES</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2015_DM_CURSO</from>
+      <to>2014_DM_CURSO</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>2015_DM_IES</from>
+      <to>2014_DM_IES</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>2014_DM_CURSO</name>
@@ -518,7 +604,7 @@
       <schema_name/>
     </partitioning>
     <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2014 - DM_CURSO.CSV</filename>
-    <filename_field/>
+    <filename_field>global_path\cssv\2014 - DM_CURSO.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -1588,7 +1674,7 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>400</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -1604,7 +1690,7 @@
       <schema_name/>
     </partitioning>
     <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2014 - DM_IES.CSV</filename>
-    <filename_field/>
+    <filename_field>global_path\cssv\2014 - DM_IES.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -2102,7 +2188,7 @@
     </remotesteps>
     <GUI>
       <xloc>400</xloc>
-      <yloc>400</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -2118,7 +2204,7 @@
       <schema_name/>
     </partitioning>
     <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2015 - DM_CURSO.CSV</filename>
-    <filename_field/>
+    <filename_field>global_path\cssv\2015 - DM_CURSO.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -3188,7 +3274,7 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>304</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3204,7 +3290,7 @@
       <schema_name/>
     </partitioning>
     <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2015 - DM_IES.CSV</filename>
-    <filename_field/>
+    <filename_field>global_path\cssv\2015 - DM_IES.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -3779,7 +3865,7 @@
     </remotesteps>
     <GUI>
       <xloc>400</xloc>
-      <yloc>304</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -3795,7 +3881,7 @@
       <schema_name/>
     </partitioning>
     <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2016 - DM_CURSO.CSV</filename>
-    <filename_field/>
+    <filename_field>global_path\cssv\2016 - DM_CURSO.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -4876,7 +4962,7 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -4892,7 +4978,7 @@
       <schema_name/>
     </partitioning>
     <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2016 - DM_IES.CSV</filename>
-    <filename_field/>
+    <filename_field>global_path\cssv\2016 - DM_IES.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -5467,7 +5553,7 @@
     </remotesteps>
     <GUI>
       <xloc>400</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -5483,7 +5569,7 @@
       <schema_name/>
     </partitioning>
     <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2017 - DM_CURSO.CSV</filename>
-    <filename_field/>
+    <filename_field>global_path\cssv\2017 - DM_CURSO.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>;</separator>
@@ -6762,7 +6848,7 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>128</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -6777,8 +6863,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2017 - DM_IES.CSV</filename>
-    <filename_field/>
+    <filename>global_path\cssv\2017 - DM_IES.CSV</filename>
+    <filename_field>global_path\cssv\2017 - DM_IES.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -7320,7 +7406,7 @@
     </remotesteps>
     <GUI>
       <xloc>400</xloc>
-      <yloc>128</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -7335,8 +7421,8 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2018 - DM_CURSO.CSV</filename>
-    <filename_field/>
+    <filename>path_global\cssv\2018 - DM_CURSO.CSV</filename>
+    <filename_field>global_path\cssv\2018 - DM_CURSO.CSV</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -8593,7 +8679,7 @@
     </remotesteps>
     <GUI>
       <xloc>80</xloc>
-      <yloc>32</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -8609,7 +8695,7 @@
       <schema_name/>
     </partitioning>
     <filename>C:\Users\felly\OneDrive\Documentos\pos\projetobi\pentaho_pos\cssv\2018 - DM_IES.CSV</filename>
-    <filename_field/>
+    <filename_field>global_path\csv\2018 - DM_IES.csv</filename_field>
     <rownum_field/>
     <include_filename>N</include_filename>
     <separator>|</separator>
@@ -9162,7 +9248,7 @@
     </remotesteps>
     <GUI>
       <xloc>400</xloc>
-      <yloc>32</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -9178,7 +9264,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>curso2014</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -9586,7 +9672,7 @@
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
-      <yloc>400</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -9602,7 +9688,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>curso2015</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -10010,7 +10096,7 @@
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
-      <yloc>304</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -10026,7 +10112,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>curso2016</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -10438,7 +10524,7 @@
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -10454,7 +10540,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>curso2017</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -10934,7 +11020,7 @@
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
-      <yloc>128</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -10950,7 +11036,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>curso2018</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -11426,7 +11512,7 @@
     </remotesteps>
     <GUI>
       <xloc>240</xloc>
-      <yloc>32</yloc>
+      <yloc>144</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -11442,7 +11528,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>ies2014</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -11642,7 +11728,7 @@
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>400</yloc>
+      <yloc>512</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -11658,7 +11744,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>ies2015</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -11886,7 +11972,7 @@
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>304</yloc>
+      <yloc>416</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -11902,7 +11988,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>ies2016</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -12130,7 +12216,7 @@
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>224</yloc>
+      <yloc>336</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12146,7 +12232,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>ies2017</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -12362,7 +12448,7 @@
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>128</yloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -12378,7 +12464,7 @@
       <schema_name/>
     </partitioning>
     <connection>projeto_bi</connection>
-    <schema/>
+    <schema>projetobi</schema>
     <table>ies2018</table>
     <commit>1000</commit>
     <truncate>Y</truncate>
@@ -12598,7 +12684,40 @@
     </remotesteps>
     <GUI>
       <xloc>560</xloc>
-      <yloc>32</yloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Set session variables</name>
+    <type>SetSessionVariableStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>global_path</name>
+        <variable>global_path</variable>
+        <default_value>C:\Users\felly\OneDrive\Área de Trabalho\pentaho_pos</default_value>
+      </field>
+    </fields>
+    <use_formatting>Y</use_formatting>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>80</xloc>
+      <yloc>16</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
