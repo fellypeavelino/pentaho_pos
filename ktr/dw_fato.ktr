@@ -480,6 +480,11 @@
       <to>fato</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>ano_2019</from>
+      <to>fato</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ano_2014</name>
@@ -834,6 +839,62 @@ WHERE  (( `ies2018`.`co_uf` = 26)
     <GUI>
       <xloc>256</xloc>
       <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>ano_2019</name>
+    <type>TableInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>projetobi</connection>
+    <sql>SELECT `ies`.`co_ies`  AS `co_ies`,
+       `ies`.`no_ies`  AS `no_ies`,
+       `curso`.`co_curso` AS `co_curso`,
+       `curso`.`no_curso` AS `no_curso`,
+       `ies`.`nu_ano_censo` AS `nu_ano_censo`,
+       cast(
+	   (IFNULL(`curso`.`qt_insc_vaga_nova_integral`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_nova_matutino`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_nova_vespertino`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_nova_noturno`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_nova_ead`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_reman_integral`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_reman_matutino`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_reman_vespertino`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_reman_noturno`,0)
+	   + IFNULL(`curso`.`qt_insc_vaga_reman_ead`,0))
+	    as unsigned integer) AS `qt_insc_vaga_total`,
+       `curso`.`qt_matricula_total` AS `qt_matricula_total`,
+       `curso`.`qt_concluinte_total` AS `qt_concluinte_total`
+FROM   (curso2019 `curso` 
+JOIN   ies2019 `ies`) 
+WHERE  (( `ies`.`co_uf` = 26) 
+       AND    ( `ies`.`co_municipio` = 2611606) 
+	   AND    curso.TP_SITUACAO = 1
+       AND    ( `ies`.`co_ies` = `curso`.`co_ies`))</sql>
+    <limit>0</limit>
+    <lookup/>
+    <execute_each_row>N</execute_each_row>
+    <variables_active>N</variables_active>
+    <lazy_conversion_active>N</lazy_conversion_active>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>224</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
