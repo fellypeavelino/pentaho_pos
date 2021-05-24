@@ -22,3 +22,36 @@ SISTEMAS PARA INTERNET
 
 
 https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior
+
+
+SELECT no_curso, sum(qt_concluinte_total) qt_concluinte_total FROM `fato` 
+WHERE `nu_ano_censo` = 2019 GROUP BY no_curso ORDER BY `qt_concluinte_total` DESC;
+
+SELECT no_ies, sum(qt_concluinte_total) qt_concluinte_total FROM `fato` WHERE `nu_ano_censo` = 2019 
+GROUP BY no_ies ORDER BY `qt_concluinte_total` DESC;
+
+SELECT no_ies, no_curso, sum(qt_concluinte_total) qt_concluinte_total FROM `fato` WHERE `nu_ano_censo` = 2019 
+GROUP BY no_ies, no_curso ORDER BY `qt_concluinte_total` DESC
+
+
+SELECT no_ies, no_curso, sum(qt_matricula_total) qt_matricula_total FROM `fato` WHERE `nu_ano_censo` = 2019 
+GROUP BY no_ies, no_curso ORDER BY qt_matricula_total DESC
+
+
+TP_ORGANIZACAO_ACADEMICA, ies 19,18,17
+1.1 – Categoria Administrativa
+A) Pública Federal: SUP_IES. TP_CATEGORIA_ADMINISTRATIVA= 1
+B) Pública Estadual: SUP_IES.TP_CATEGORIA_ADMINISTRATIVA = 2
+C) Pública Municipal: SUP _IES.TP_CATEGORIA_ADMINISTRATIVA = 3
+D) Privadas: SUP _IES.TP_CATEGORIA_ADMINISTRATIVA IN (4,5)
+E) Especial: SUP _IES.TP_CATEGORIA_ADMINISTRATIVA = 7
+Para a Sinopse, a Categoria Administrativa Especial foi somada com a Municipa
+curso
+2.4 – Grau Acadêmico do Curso (apenas para cursos de Graduação)
+A) Bacharelado: SUP_CURSO.TP_GRAU_ACADEMICO = 1
+B) Licenciatura: SUP_CURSO.TP_GRAU_ACADEMICO = 2
+C) Tecnológico: SUP_CURSO.TP_GRAU_ACADEMICO = 3
+D) Não Aplicável: SUP_CURSO.TP_GRAU_ACADEMICO = .
+2.5 – Modalidades de Ensino
+A) Cursos Presenciais: SUP_CURSO.TP_MODALIDADE_ENSINO = 1
+B) Cursos a Distância (EaD): SUP_CURSO.TP_MODALIDADE_ENSINO = 2
