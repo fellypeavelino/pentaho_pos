@@ -522,7 +522,23 @@ JOIN   `ies2014`)
 WHERE  (( `ies2014`.`co_uf_ies` = 26) 
        AND    ( `ies2014`.`co_municipio_ies` = 2611606)
 	   AND  curso2014.CO_SITUACAO_CURSO = 1
-       AND    ( `ies2014`.`co_ies` = `curso2014`.`co_ies`))</sql>
+       AND    ( `ies2014`.`co_ies` = `curso2014`.`co_ies`)
+       AND curso2014.NO_CURSO in(
+'ANÁLISE E DESENVOLVIMENTO DE SISTEMAS',
+'CIÊNCIA DA COMPUTAÇÃO',
+'GERENCIAMENTO DE REDES DE COMPUTADORES',
+'INTERNET E REDES DE COMPUTADORES',
+'JOGOS DIGITAIS',
+'REDES DE COMPUTADORES',
+'SISTEMA DE INFORMAÇÃO',
+'SISTEMAS DE BANCO DE DADOS',
+'SISTEMAS DE INFORMAÇÃO',
+'SISTEMAS PARA INTERNET',
+'WEB DESIGN',
+'BANCO DE DADOS',
+'SEGURANÇA DA INFORMAÇÃO'
+       )
+)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -578,7 +594,23 @@ JOIN   `ies2015`)
 WHERE  (( `ies2015`.`co_uf_ies` = 26) 
        AND    ( `ies2015`.`co_municipio_ies` = 2611606) 
 AND  curso2015.CO_SITUACAO_CURSO = 1
-       AND    ( `ies2015`.`co_ies` = `curso2015`.`co_ies`)) </sql>
+       AND    ( `ies2015`.`co_ies` = `curso2015`.`co_ies`)
+       AND curso2015.NO_CURSO in(
+'ANÁLISE E DESENVOLVIMENTO DE SISTEMAS',
+'CIÊNCIA DA COMPUTAÇÃO',
+'GERENCIAMENTO DE REDES DE COMPUTADORES',
+'INTERNET E REDES DE COMPUTADORES',
+'JOGOS DIGITAIS',
+'REDES DE COMPUTADORES',
+'SISTEMA DE INFORMAÇÃO',
+'SISTEMAS DE BANCO DE DADOS',
+'SISTEMAS DE INFORMAÇÃO',
+'SISTEMAS PARA INTERNET',
+'WEB DESIGN',
+'BANCO DE DADOS',
+'SEGURANÇA DA INFORMAÇÃO'
+       )
+) </sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -634,7 +666,24 @@ JOIN   `ies2016`)
 WHERE  (( `ies2016`.`co_uf_ies` = 26) 
        AND    ( `ies2016`.`co_municipio_ies` = 2611606) 
 AND  curso2016.CO_SITUACAO_CURSO = 1
-       AND    ( `ies2016`.`co_ies` = `curso2016`.`co_ies`)) </sql>
+       AND    ( `ies2016`.`co_ies` = `curso2016`.`co_ies`)
+       AND curso2016.NO_CURSO in(
+'ANÁLISE E DESENVOLVIMENTO DE SISTEMAS',
+'CIÊNCIA DA COMPUTAÇÃO',
+'GERENCIAMENTO DE REDES DE COMPUTADORES',
+'INTERNET E REDES DE COMPUTADORES',
+'JOGOS DIGITAIS',
+'REDES DE COMPUTADORES',
+'SISTEMA DE INFORMAÇÃO',
+'SISTEMAS DE BANCO DE DADOS',
+'SISTEMAS DE INFORMAÇÃO',
+'SISTEMAS PARA INTERNET',
+'WEB DESIGN',
+'BANCO DE DADOS',
+'SEGURANÇA DA INFORMAÇÃO'
+       )
+
+) </sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -690,7 +739,24 @@ JOIN   `ies2017`)
 WHERE  (( `ies2017`.`co_uf` = 26) 
        AND    ( ies2017.`co_municipio` = 2611606) 
 	   AND    curso2017.TP_SITUACAO = 1
-       AND    ( `ies2017`.`co_ies` = `curso2017`.`co_ies`)) </sql>
+       AND    ( `ies2017`.`co_ies` = `curso2017`.`co_ies`)
+       AND curso2017.NO_CURSO in(
+'ANÁLISE E DESENVOLVIMENTO DE SISTEMAS',
+'CIÊNCIA DA COMPUTAÇÃO',
+'GERENCIAMENTO DE REDES DE COMPUTADORES',
+'INTERNET E REDES DE COMPUTADORES',
+'JOGOS DIGITAIS',
+'REDES DE COMPUTADORES',
+'SISTEMA DE INFORMAÇÃO',
+'SISTEMAS DE BANCO DE DADOS',
+'SISTEMAS DE INFORMAÇÃO',
+'SISTEMAS PARA INTERNET',
+'WEB DESIGN',
+'BANCO DE DADOS',
+'SEGURANÇA DA INFORMAÇÃO'
+       )
+
+) </sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -746,7 +812,23 @@ JOIN   `ies2018`)
 WHERE  (( `ies2018`.`co_uf` = 26) 
        AND    ( `ies2018`.`co_municipio` = 2611606) 
 	   AND    curso2018.TP_SITUACAO = 1
-       AND    ( `ies2018`.`co_ies` = `curso2018`.`co_ies`)) </sql>
+       AND    ( `ies2018`.`co_ies` = `curso2018`.`co_ies`)
+       AND curso2018.NO_CURSO in(
+'ANÁLISE E DESENVOLVIMENTO DE SISTEMAS',
+'CIÊNCIA DA COMPUTAÇÃO',
+'GERENCIAMENTO DE REDES DE COMPUTADORES',
+'INTERNET E REDES DE COMPUTADORES',
+'JOGOS DIGITAIS',
+'REDES DE COMPUTADORES',
+'SISTEMA DE INFORMAÇÃO',
+'SISTEMAS DE BANCO DE DADOS',
+'SISTEMAS DE INFORMAÇÃO',
+'SISTEMAS PARA INTERNET',
+'WEB DESIGN',
+'BANCO DE DADOS',
+'SEGURANÇA DA INFORMAÇÃO'
+       )
+) </sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -878,7 +960,24 @@ JOIN   ies2019 `ies`)
 WHERE  (( `ies`.`co_uf` = 26) 
        AND    ( `ies`.`co_municipio` = 2611606) 
 	   AND    curso.TP_SITUACAO = 1
-       AND    ( `ies`.`co_ies` = `curso`.`co_ies`))</sql>
+       AND    ( `ies`.`co_ies` = `curso`.`co_ies`)
+
+       AND curso.NO_CURSO in(
+'ANÁLISE E DESENVOLVIMENTO DE SISTEMAS',
+'CIÊNCIA DA COMPUTAÇÃO',
+'GERENCIAMENTO DE REDES DE COMPUTADORES',
+'INTERNET E REDES DE COMPUTADORES',
+'JOGOS DIGITAIS',
+'REDES DE COMPUTADORES',
+'SISTEMA DE INFORMAÇÃO',
+'SISTEMAS DE BANCO DE DADOS',
+'SISTEMAS DE INFORMAÇÃO',
+'SISTEMAS PARA INTERNET',
+'WEB DESIGN',
+'BANCO DE DADOS',
+'SEGURANÇA DA INFORMAÇÃO'
+       )
+)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
