@@ -735,6 +735,38 @@ CREATE TABLE fato
 , qt_concluinte_total BIGINT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+CREATE OR REPLACE VIEW v_fato AS
+SELECT 
+co_ies,
+no_ies,
+co_curso,
+no_curso,
+CASE 
+	WHEN CATEGORIA_ADMINISTRATIVA = 1 THEN 'Pública Federal'
+	WHEN CATEGORIA_ADMINISTRATIVA = 2 THEN 'Pública Estadual'
+	WHEN CATEGORIA_ADMINISTRATIVA = 3 THEN 'Pública Municipal'
+	WHEN CATEGORIA_ADMINISTRATIVA = 4 THEN 'Privada com fins lucrativos'
+	WHEN CATEGORIA_ADMINISTRATIVA = 5 THEN 'Privada sem fins lucrativos'
+	WHEN CATEGORIA_ADMINISTRATIVA = 7 THEN 'Especial'
+	ELSE ''
+END AS CATEGORIA_ADMINISTRATIVA,
+CASE 
+	WHEN GRAU_ACADEMICO = 1 THEN 'Bacharelado'
+	WHEN GRAU_ACADEMICO = 2 THEN 'Licenciatura'
+	WHEN GRAU_ACADEMICO = 3 THEN 'Tecnológico'
+	ELSE 'Não aplicável'
+END AS GRAU_ACADEMICO,
+CASE 
+	WHEN MODALIDADE_ENSINO = 1 THEN 'Presencial'
+	WHEN MODALIDADE_ENSINO = 2 THEN 'Curso a distância'
+	ELSE ''
+END AS MODALIDADE_ENSINO,
+nu_ano_censo,
+qt_insc_vaga_total,
+qt_matricula_total,
+qt_concluinte_total
+FROM `fato` ;
+
 -- --------------------------------------------------------
 
 --
