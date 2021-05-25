@@ -720,15 +720,19 @@ CREATE TABLE `curso2019` (
 -- Estrutura da tabela `fato`
 --
 
-CREATE TABLE `fato` (
-  `co_ies` bigint(20) DEFAULT NULL,
-  `no_ies` varchar(255) DEFAULT NULL,
-  `co_curso` bigint(20) DEFAULT NULL,
-  `no_curso` varchar(255) DEFAULT NULL,
-  `nu_ano_censo` bigint(20) DEFAULT NULL,
-  `qt_insc_vaga_total` bigint(20) DEFAULT NULL,
-  `qt_matricula_total` bigint(20) DEFAULT NULL,
-  `qt_concluinte_total` bigint(20) DEFAULT NULL
+CREATE TABLE fato
+(
+  co_ies BIGINT
+, no_ies VARCHAR(255)
+, co_curso BIGINT
+, no_curso VARCHAR(255)
+, CATEGORIA_ADMINISTRATIVA BIGINT
+, GRAU_ACADEMICO BIGINT
+, MODALIDADE_ENSINO BIGINT
+, nu_ano_censo BIGINT
+, qt_insc_vaga_total BIGINT
+, qt_matricula_total BIGINT
+, qt_concluinte_total BIGINT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

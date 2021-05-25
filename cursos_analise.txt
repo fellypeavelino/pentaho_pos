@@ -55,3 +55,26 @@ D) Não Aplicável: SUP_CURSO.TP_GRAU_ACADEMICO = .
 2.5 – Modalidades de Ensino
 A) Cursos Presenciais: SUP_CURSO.TP_MODALIDADE_ENSINO = 1
 B) Cursos a Distância (EaD): SUP_CURSO.TP_MODALIDADE_ENSINO = 2
+
+ies CO_CATEGORIA_ADMINISTRATIVA 16 a 14
+1. Pública Federal 
+2. Pública Estadual 
+3. Pública Municipal 
+4. Privada com fins lucrativos 
+5. Privada sem fins lucrativos 
+7. Especial
+
+curso CO_GRAU_ACADEMICO 16 a 14
+1. Bacharelado 
+2. Licenciatura 
+3. Tecnológico 
+(.) Não aplicável (cursos com 
+nível acadêmico igual a 
+Sequencial de formação 
+específica ou cursos com Área 
+Básica de Ingresso identificada 
+pela variável 
+
+CO_MODALIDADE_ENSINO
+1. Presencial 
+2. Curso a distância 

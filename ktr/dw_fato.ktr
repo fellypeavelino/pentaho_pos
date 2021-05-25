@@ -502,6 +502,9 @@
        `ies2014`.`no_ies` AS `no_ies`,
        `curso2014`.`co_curso` AS `co_curso`,
        `curso2014`.`no_curso` AS `no_curso`,
+       ies2014.CO_CATEGORIA_ADMINISTRATIVA AS CATEGORIA_ADMINISTRATIVA,
+       curso2014.CO_GRAU_ACADEMICO AS GRAU_ACADEMICO,
+       curso2014.CO_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,
        2014 AS `nu_ano_censo`,
        REPLACE(
 	   IFNULL(`curso2014`.`qt_insc_vagas_novas_int`,0)
@@ -574,6 +577,9 @@ WHERE  (( `ies2014`.`co_uf_ies` = 26)
        `ies2015`.`no_ies`  AS `no_ies`,
        `curso2015`.`co_curso` AS `co_curso`,
        `curso2015`.`no_curso` AS `no_curso`,
+       ies2015.CO_CATEGORIA_ADMINISTRATIVA AS CATEGORIA_ADMINISTRATIVA,
+       curso2015.CO_GRAU_ACADEMICO AS GRAU_ACADEMICO,
+       curso2015.CO_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,
        2015 as nu_ano_censo ,
        REPLACE(
 	   IFNULL(`curso2015`.`qt_insc_vagas_novas_int`,0)
@@ -646,6 +652,9 @@ AND  curso2015.CO_SITUACAO_CURSO = 1
        `ies2016`.`no_ies` AS `no_ies`,
        `curso2016`.`co_curso` AS `co_curso`,
        `curso2016`.`no_curso` AS `no_curso`,
+       ies2016.CO_CATEGORIA_ADMINISTRATIVA AS CATEGORIA_ADMINISTRATIVA,
+       curso2016.CO_GRAU_ACADEMICO AS GRAU_ACADEMICO,
+       curso2016.CO_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,
        2016 AS `nu_ano_censo`,
        REPLACE(
 	   IFNULL(`curso2016`.`qt_insc_vagas_novas_int`,0) 
@@ -715,11 +724,14 @@ AND  curso2016.CO_SITUACAO_CURSO = 1
       <schema_name/>
     </partitioning>
     <connection>projetobi</connection>
-    <sql>SELECT `ies2017`.`co_ies`                                                                                                                                                                                                        AS `co_ies`,
-       `ies2017`.`no_ies`                                                                                                                                                                                                        AS `no_ies`,
-       `curso2017`.`co_curso`                                                                                                                                                                                                        AS `co_curso`,
-       `curso2017`.`no_curso`                                                                                                                                                                                                        AS `no_curso`,
-       `ies2017`.`nu_ano_censo`                                                                                                                                                                                                        AS `nu_ano_censo`,
+    <sql>SELECT `ies2017`.`co_ies`  AS `co_ies`,
+       `ies2017`.`no_ies`  AS `no_ies`,
+       `curso2017`.`co_curso` AS `co_curso`,
+       `curso2017`.`no_curso` AS `no_curso`,
+       ies2017.TP_CATEGORIA_ADMINISTRATIVA AS CATEGORIA_ADMINISTRATIVA,
+       curso2017.TP_GRAU_ACADEMICO AS GRAU_ACADEMICO,
+       curso2017.TP_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,  
+       `ies2017`.`nu_ano_censo` AS `nu_ano_censo`,
        (
 	   IFNULL(`curso2017`.`qt_insc_vaga_nova_integral`,0)
 	   + IFNULL(`curso2017`.`qt_insc_vaga_nova_matutino`,0)
@@ -756,7 +768,7 @@ WHERE  (( `ies2017`.`co_uf` = 26)
 'SEGURANÇA DA INFORMAÇÃO'
        )
 
-) </sql>
+)</sql>
     <limit>0</limit>
     <lookup/>
     <execute_each_row>N</execute_each_row>
@@ -792,6 +804,9 @@ WHERE  (( `ies2017`.`co_uf` = 26)
        `ies2018`.`no_ies`  AS `no_ies`,
        `curso2018`.`co_curso` AS `co_curso`,
        `curso2018`.`no_curso` AS `no_curso`,
+       ies2018.TP_CATEGORIA_ADMINISTRATIVA AS CATEGORIA_ADMINISTRATIVA,
+       curso2018.TP_GRAU_ACADEMICO AS GRAU_ACADEMICO,
+       curso2018.TP_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,
        `ies2018`.`nu_ano_censo` AS `nu_ano_censo`,
        (
 	   IFNULL(`curso2018`.`qt_insc_vaga_nova_integral`,0)
@@ -849,82 +864,6 @@ WHERE  (( `ies2018`.`co_uf` = 26)
     </GUI>
   </step>
   <step>
-    <name>fato</name>
-    <type>TableOutput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>projetobi</connection>
-    <schema/>
-    <table>fato</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
-    <fields>
-      <field>
-        <column_name>co_ies</column_name>
-        <stream_name>co_ies</stream_name>
-      </field>
-      <field>
-        <column_name>no_ies</column_name>
-        <stream_name>no_ies</stream_name>
-      </field>
-      <field>
-        <column_name>co_curso</column_name>
-        <stream_name>co_curso</stream_name>
-      </field>
-      <field>
-        <column_name>no_curso</column_name>
-        <stream_name>no_curso</stream_name>
-      </field>
-      <field>
-        <column_name>nu_ano_censo</column_name>
-        <stream_name>nu_ano_censo</stream_name>
-      </field>
-      <field>
-        <column_name>qt_insc_vaga_total</column_name>
-        <stream_name>qt_insc_vaga_total</stream_name>
-      </field>
-      <field>
-        <column_name>qt_matricula_total</column_name>
-        <stream_name>qt_matricula_total</stream_name>
-      </field>
-      <field>
-        <column_name>qt_concluinte_total</column_name>
-        <stream_name>qt_concluinte_total</stream_name>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>256</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
     <name>ano_2019</name>
     <type>TableInput</type>
     <description/>
@@ -941,6 +880,9 @@ WHERE  (( `ies2018`.`co_uf` = 26)
        `curso`.`co_curso` AS `co_curso`,
        `curso`.`no_curso` AS `no_curso`,
        `ies`.`nu_ano_censo` AS `nu_ano_censo`,
+       ies.TP_CATEGORIA_ADMINISTRATIVA AS CATEGORIA_ADMINISTRATIVA,
+       curso.TP_GRAU_ACADEMICO AS GRAU_ACADEMICO,
+       curso.TP_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,
        cast(
 	   (IFNULL(`curso`.`qt_insc_vaga_nova_integral`,0)
 	   + IFNULL(`curso`.`qt_insc_vaga_nova_matutino`,0)
@@ -994,6 +936,94 @@ WHERE  (( `ies`.`co_uf` = 26)
     <GUI>
       <xloc>256</xloc>
       <yloc>224</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>fato</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>projetobi</connection>
+    <schema/>
+    <table>fato</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>co_ies</column_name>
+        <stream_name>co_ies</stream_name>
+      </field>
+      <field>
+        <column_name>no_ies</column_name>
+        <stream_name>no_ies</stream_name>
+      </field>
+      <field>
+        <column_name>co_curso</column_name>
+        <stream_name>co_curso</stream_name>
+      </field>
+      <field>
+        <column_name>no_curso</column_name>
+        <stream_name>no_curso</stream_name>
+      </field>
+      <field>
+        <column_name>CATEGORIA_ADMINISTRATIVA</column_name>
+        <stream_name>CATEGORIA_ADMINISTRATIVA</stream_name>
+      </field>
+      <field>
+        <column_name>GRAU_ACADEMICO</column_name>
+        <stream_name>GRAU_ACADEMICO</stream_name>
+      </field>
+      <field>
+        <column_name>MODALIDADE_ENSINO</column_name>
+        <stream_name>MODALIDADE_ENSINO</stream_name>
+      </field>
+      <field>
+        <column_name>nu_ano_censo</column_name>
+        <stream_name>nu_ano_censo</stream_name>
+      </field>
+      <field>
+        <column_name>qt_insc_vaga_total</column_name>
+        <stream_name>qt_insc_vaga_total</stream_name>
+      </field>
+      <field>
+        <column_name>qt_matricula_total</column_name>
+        <stream_name>qt_matricula_total</stream_name>
+      </field>
+      <field>
+        <column_name>qt_concluinte_total</column_name>
+        <stream_name>qt_concluinte_total</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>256</xloc>
+      <yloc>112</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
