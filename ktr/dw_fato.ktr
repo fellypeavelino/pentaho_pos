@@ -480,11 +480,6 @@
       <to>fato</to>
       <enabled>Y</enabled>
     </hop>
-    <hop>
-      <from>ano_2019</from>
-      <to>fato</to>
-      <enabled>Y</enabled>
-    </hop>
   </order>
   <step>
     <name>ano_2014</name>
@@ -581,7 +576,7 @@ WHERE  (( `ies2014`.`co_uf_ies` = 26)
        curso2015.CO_GRAU_ACADEMICO AS GRAU_ACADEMICO,
        curso2015.CO_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,
        2015 as nu_ano_censo ,
-       REPLACE(
+       cast(REPLACE(
 	   IFNULL(`curso2015`.`qt_insc_vagas_novas_int`,0)
 	   + IFNULL(`curso2015`.`qt_insc_vagas_novas_mat`,0)
 	   + IFNULL(`curso2015`.`qt_insc_vagas_novas_vesp`,0)
@@ -592,7 +587,7 @@ WHERE  (( `ies2014`.`co_uf_ies` = 26)
 	   + IFNULL(`curso2015`.`qt_insc_vagas_reman_vesp`,0)
 	   + IFNULL(`curso2015`.`qt_insc_vagas_reman_not`,0)
 	   + IFNULL(`curso2015`.`qt_insc_vagas_reman_ead`,0)
-	   ,",0","") AS `qt_insc_vaga_total`,
+	   ,",0","") as CHAR) AS `qt_insc_vaga_total`,
        `curso2015`.`qt_matricula_curso` AS `qt_matricula_total`,
        `curso2015`.`qt_concluinte_curso`AS `qt_concluinte_total`
 FROM   (`curso2015` 
@@ -732,7 +727,7 @@ AND  curso2016.CO_SITUACAO_CURSO = 1
        curso2017.TP_GRAU_ACADEMICO AS GRAU_ACADEMICO,
        curso2017.TP_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,  
        `ies2017`.`nu_ano_censo` AS `nu_ano_censo`,
-       (
+       cast((
 	   IFNULL(`curso2017`.`qt_insc_vaga_nova_integral`,0)
 	   + IFNULL(`curso2017`.`qt_insc_vaga_nova_matutino`,0)
 	   + IFNULL(`curso2017`.`qt_insc_vaga_nova_vespertino`,0)
@@ -743,9 +738,9 @@ AND  curso2016.CO_SITUACAO_CURSO = 1
 	   + IFNULL(`curso2017`.`qt_insc_vaga_reman_vespertino`,0)
 	   + IFNULL(`curso2017`.`qt_insc_vaga_reman_noturno`,0)
 	   + IFNULL(`curso2017`.`qt_insc_vaga_reman_ead`,0)
-	   ) AS `qt_insc_vaga_total`,
-       `curso2017`.`qt_matricula_total`                                                                                                                                                                                                        AS `qt_matricula_total`,
-       `curso2017`.`qt_concluinte_total`                                                                                                                                                                                                        AS `qt_concluinte_total`
+	   ) as CHAR) AS `qt_insc_vaga_total`,
+       `curso2017`.`qt_matricula_total` AS `qt_matricula_total`,
+       `curso2017`.`qt_concluinte_total` AS `qt_concluinte_total`
 FROM   (`curso2017` 
 JOIN   `ies2017`) 
 WHERE  (( `ies2017`.`co_uf` = 26) 
@@ -808,7 +803,7 @@ WHERE  (( `ies2017`.`co_uf` = 26)
        curso2018.TP_GRAU_ACADEMICO AS GRAU_ACADEMICO,
        curso2018.TP_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,
        `ies2018`.`nu_ano_censo` AS `nu_ano_censo`,
-       (
+       cast((
 	   IFNULL(`curso2018`.`qt_insc_vaga_nova_integral`,0)
 	   + IFNULL(`curso2018`.`qt_insc_vaga_nova_matutino`,0)
 	   + IFNULL(`curso2018`.`qt_insc_vaga_nova_vespertino`,0)
@@ -819,7 +814,7 @@ WHERE  (( `ies2017`.`co_uf` = 26)
 	   + IFNULL(`curso2018`.`qt_insc_vaga_reman_vespertino`,0)
 	   + IFNULL(`curso2018`.`qt_insc_vaga_reman_noturno`,0)
 	   + IFNULL(`curso2018`.`qt_insc_vaga_reman_ead`,0)
-	   ) AS `qt_insc_vaga_total`,
+	   ) as CHAR) AS `qt_insc_vaga_total`,
        `curso2018`.`qt_matricula_total` AS `qt_matricula_total`,
        `curso2018`.`qt_concluinte_total` AS `qt_concluinte_total`
 FROM   (`curso2018` 
@@ -894,7 +889,7 @@ WHERE  (( `ies2018`.`co_uf` = 26)
 	   + IFNULL(`curso`.`qt_insc_vaga_reman_vespertino`,0)
 	   + IFNULL(`curso`.`qt_insc_vaga_reman_noturno`,0)
 	   + IFNULL(`curso`.`qt_insc_vaga_reman_ead`,0))
-	    as unsigned integer) AS `qt_insc_vaga_total`,
+	    as CHAR) AS `qt_insc_vaga_total`,
        `curso`.`qt_matricula_total` AS `qt_matricula_total`,
        `curso`.`qt_concluinte_total` AS `qt_concluinte_total`
 FROM   (curso2019 `curso` 
