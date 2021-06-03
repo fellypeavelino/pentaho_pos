@@ -480,6 +480,11 @@
       <to>fato</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>ano_2019</from>
+      <to>fato</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
   <step>
     <name>ano_2014</name>
@@ -874,10 +879,10 @@ WHERE  (( `ies2018`.`co_uf` = 26)
        `ies`.`no_ies`  AS `no_ies`,
        `curso`.`co_curso` AS `co_curso`,
        `curso`.`no_curso` AS `no_curso`,
-       `ies`.`nu_ano_censo` AS `nu_ano_censo`,
        ies.TP_CATEGORIA_ADMINISTRATIVA AS CATEGORIA_ADMINISTRATIVA,
        curso.TP_GRAU_ACADEMICO AS GRAU_ACADEMICO,
        curso.TP_MODALIDADE_ENSINO AS MODALIDADE_ENSINO,
+		`ies`.`nu_ano_censo` AS `nu_ano_censo`,
        cast(
 	   (IFNULL(`curso`.`qt_insc_vaga_nova_integral`,0)
 	   + IFNULL(`curso`.`qt_insc_vaga_nova_matutino`,0)
@@ -930,7 +935,7 @@ WHERE  (( `ies`.`co_uf` = 26)
     </remotesteps>
     <GUI>
       <xloc>256</xloc>
-      <yloc>224</yloc>
+      <yloc>192</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
