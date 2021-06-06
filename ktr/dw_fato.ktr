@@ -519,7 +519,24 @@
 	   + IFNULL(`curso2014`.`qt_insc_vagas_reman_ead`,0)
 	   ,",0", "") AS `qt_insc_vaga_total`,
        `curso2014`.`qt_matricula_curso`  AS `qt_matricula_total`,
-       `curso2014`.`qt_concluinte_curso` AS `qt_concluinte_total`
+       `curso2014`.`qt_concluinte_curso` AS `qt_concluinte_total`,
+       REPLACE(
+	   IFNULL(`curso2014`.`QT_VAGAS_NOVAS_INTEGRAL`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_NOVAS_MATUTINO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_NOVAS_VESPERTINO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_NOVAS_NOTURNO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_NOVAS_EAD`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_REMANESC_INTEGRAL`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_REMANESC_MATUTINO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_REMANESC_VESPERTINO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_REMANESC_NOTURNO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_REMANESC_EAD`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_PROG_ESP_INTEGRAL`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_PROG_ESP_MATUTINO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
+	   + IFNULL(`curso2014`.`QT_VAGAS_PROG_ESP_EAD`,0)
+	   ,",0", "") AS `qt_vaga_total`
 FROM   (`curso2014` 
 JOIN   `ies2014`) 
 WHERE  (( `ies2014`.`co_uf_ies` = 26) 
@@ -594,7 +611,24 @@ WHERE  (( `ies2014`.`co_uf_ies` = 26)
 	   + IFNULL(`curso2015`.`qt_insc_vagas_reman_ead`,0)
 	   ,",0","") as CHAR) AS `qt_insc_vaga_total`,
        `curso2015`.`qt_matricula_curso` AS `qt_matricula_total`,
-       `curso2015`.`qt_concluinte_curso`AS `qt_concluinte_total`
+       `curso2015`.`qt_concluinte_curso`AS `qt_concluinte_total`,
+       REPLACE(
+	   IFNULL(`curso2015`.`QT_VAGAS_NOVAS_INTEGRAL`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_NOVAS_MATUTINO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_NOVAS_VESPERTINO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_NOVAS_NOTURNO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_NOVAS_EAD`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_REMANESC_INTEGRAL`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_REMANESC_MATUTINO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_REMANESC_VESPERTINO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_REMANESC_NOTURNO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_REMANESC_EAD`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_PROG_ESP_INTEGRAL`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_PROG_ESP_MATUTINO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
+	   + IFNULL(`curso2015`.`QT_VAGAS_PROG_ESP_EAD`,0)
+	   ,",0", "") AS `qt_vaga_total`
 FROM   (`curso2015` 
 JOIN   `ies2015`) 
 WHERE  (( `ies2015`.`co_uf_ies` = 26) 
@@ -669,7 +703,24 @@ AND  curso2015.CO_SITUACAO_CURSO = 1
 	   + IFNULL(`curso2016`.`qt_insc_vagas_reman_ead`,0)
 	   ,",0","") AS `qt_insc_vaga_total`,
        `curso2016`.`qt_matricula_curso` AS `qt_matricula_total`,
-       `curso2016`.`qt_concluinte_curso` AS `qt_concluinte_total`
+       `curso2016`.`qt_concluinte_curso` AS `qt_concluinte_total`,
+	   REPLACE(
+	   IFNULL(`curso2016`.`QT_VAGAS_NOVAS_INTEGRAL`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_NOVAS_MATUTINO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_NOVAS_VESPERTINO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_NOVAS_NOTURNO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_NOVAS_EAD`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_REMANESC_INTEGRAL`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_REMANESC_MATUTINO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_REMANESC_VESPERTINO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_REMANESC_NOTURNO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_REMANESC_EAD`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_PROG_ESP_INTEGRAL`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_PROG_ESP_MATUTINO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
+	   + IFNULL(`curso2016`.`QT_VAGAS_PROG_ESP_EAD`,0)
+	   ,",0", "") AS `qt_vaga_total`
 FROM   (`curso2016` 
 JOIN   `ies2016`) 
 WHERE  (( `ies2016`.`co_uf_ies` = 26) 
@@ -745,7 +796,33 @@ AND  curso2016.CO_SITUACAO_CURSO = 1
 	   + IFNULL(`curso2017`.`qt_insc_vaga_reman_ead`,0)
 	   ) as CHAR) AS `qt_insc_vaga_total`,
        `curso2017`.`qt_matricula_total` AS `qt_matricula_total`,
-       `curso2017`.`qt_concluinte_total` AS `qt_concluinte_total`
+       `curso2017`.`qt_concluinte_total` AS `qt_concluinte_total`,
+       REPLACE(
+	   IFNULL(`curso2017`.`QT_VAGAS_NOVAS_INTEGRAL`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_NOVAS_MATUTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_NOVAS_VESPERTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_NOVAS_NOTURNO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_NOVAS_EAD`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_REMAN_INTEGRAL`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_REMAN_MATUTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_REMAN_VESPERTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_REMAN_NOTURNO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_REMAN_EAD`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PROG_ESP_INTEGRAL`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PROG_ESP_MATUTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PROG_ESP_EAD`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PRINCIPAL_INTEGRAL`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PRINCIPAL_MATUTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PRINCIPAL_NOTURNO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_PRINCIPAL_EAD`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_OUTRAS_INTEGRAL`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_OUTRAS_MATUTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_OUTRAS_VESPERTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_OUTRAS_NOTURNO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_OUTRAS_EAD`,0)
+	   ,",0", "") AS `qt_vaga_total`
 FROM   (`curso2017` 
 JOIN   `ies2017`) 
 WHERE  (( `ies2017`.`co_uf` = 26) 
@@ -821,7 +898,33 @@ WHERE  (( `ies2017`.`co_uf` = 26)
 	   + IFNULL(`curso2018`.`qt_insc_vaga_reman_ead`,0)
 	   ) as CHAR) AS `qt_insc_vaga_total`,
        `curso2018`.`qt_matricula_total` AS `qt_matricula_total`,
-       `curso2018`.`qt_concluinte_total` AS `qt_concluinte_total`
+       `curso2018`.`qt_concluinte_total` AS `qt_concluinte_total`,
+       REPLACE(
+	   IFNULL(`curso2018`.`QT_VAGAS_NOVAS_INTEGRAL`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_NOVAS_MATUTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_NOVAS_VESPERTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_NOVAS_NOTURNO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_NOVAS_EAD`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_REMAN_INTEGRAL`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_REMAN_MATUTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_REMAN_VESPERTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_REMAN_NOTURNO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_REMAN_EAD`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PROG_ESP_INTEGRAL`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PROG_ESP_MATUTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PROG_ESP_EAD`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PRINCIPAL_INTEGRAL`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PRINCIPAL_MATUTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PRINCIPAL_NOTURNO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_PRINCIPAL_EAD`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_OUTRAS_INTEGRAL`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_OUTRAS_MATUTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_OUTRAS_VESPERTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_OUTRAS_NOTURNO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_OUTRAS_EAD`,0)
+	   ,",0", "") AS `qt_vaga_total`
 FROM   (`curso2018` 
 JOIN   `ies2018`) 
 WHERE  (( `ies2018`.`co_uf` = 26) 
@@ -896,7 +999,33 @@ WHERE  (( `ies2018`.`co_uf` = 26)
 	   + IFNULL(`curso`.`qt_insc_vaga_reman_ead`,0))
 	    as CHAR) AS `qt_insc_vaga_total`,
        `curso`.`qt_matricula_total` AS `qt_matricula_total`,
-       `curso`.`qt_concluinte_total` AS `qt_concluinte_total`
+       `curso`.`qt_concluinte_total` AS `qt_concluinte_total`,
+       REPLACE(
+	   IFNULL(`curso`.`QT_VAGAS_NOVAS_INTEGRAL`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_NOVAS_MATUTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_NOVAS_VESPERTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_NOVAS_NOTURNO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_NOVAS_EAD`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_REMAN_INTEGRAL`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_REMAN_MATUTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_REMAN_VESPERTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_REMAN_NOTURNO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_REMAN_EAD`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PROG_ESP_INTEGRAL`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PROG_ESP_MATUTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PROG_ESP_EAD`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PRINCIPAL_INTEGRAL`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PRINCIPAL_MATUTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PRINCIPAL_NOTURNO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_PRINCIPAL_EAD`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_INTEGRAL`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_MATUTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_VESPERTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_NOTURNO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_EAD`,0)
+	   ,",0", "") AS `qt_vaga_total`
 FROM   (curso2019 `curso` 
 JOIN   ies2019 `ies`) 
 WHERE  (( `ies`.`co_uf` = 26) 
@@ -1011,6 +1140,10 @@ WHERE  (( `ies`.`co_uf` = 26)
       <field>
         <column_name>qt_concluinte_total</column_name>
         <stream_name>qt_concluinte_total</stream_name>
+      </field>
+      <field>
+        <column_name>qt_vaga_total</column_name>
+        <stream_name>qt_vaga_total</stream_name>
       </field>
     </fields>
     <attributes/>
