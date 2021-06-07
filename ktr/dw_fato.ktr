@@ -822,6 +822,11 @@ AND  curso2016.CO_SITUACAO_CURSO = 1
 	   + IFNULL(`curso2017`.`QT_VAGAS_OUTRAS_VESPERTINO`,0)
 	   + IFNULL(`curso2017`.`QT_VAGAS_OUTRAS_NOTURNO`,0)
 	   + IFNULL(`curso2017`.`QT_VAGAS_OUTRAS_EAD`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_ANUAL_INTEGRAL`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_ANUAL_MATUTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_ANUAL_VESPERTINO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_ANUAL_NOTURNO`,0)
+	   + IFNULL(`curso2017`.`QT_VAGAS_ANUAL_EAD`,0)
 	   ,",0", "") AS `qt_vaga_total`
 FROM   (`curso2017` 
 JOIN   `ies2017`) 
@@ -924,6 +929,11 @@ WHERE  (( `ies2017`.`co_uf` = 26)
 	   + IFNULL(`curso2018`.`QT_VAGAS_OUTRAS_VESPERTINO`,0)
 	   + IFNULL(`curso2018`.`QT_VAGAS_OUTRAS_NOTURNO`,0)
 	   + IFNULL(`curso2018`.`QT_VAGAS_OUTRAS_EAD`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_ANUAL_INTEGRAL`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_ANUAL_MATUTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_ANUAL_VESPERTINO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_ANUAL_NOTURNO`,0)
+	   + IFNULL(`curso2018`.`QT_VAGAS_ANUAL_EAD`,0)
 	   ,",0", "") AS `qt_vaga_total`
 FROM   (`curso2018` 
 JOIN   `ies2018`) 
@@ -1025,6 +1035,12 @@ WHERE  (( `ies2018`.`co_uf` = 26)
 	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_VESPERTINO`,0)
 	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_NOTURNO`,0)
 	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_EAD`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_OUTRAS_EAD`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_ANUAL_INTEGRAL`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_ANUAL_MATUTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_ANUAL_VESPERTINO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_ANUAL_NOTURNO`,0)
+	   + IFNULL(`curso`.`QT_VAGAS_ANUAL_EAD`,0)
 	   ,",0", "") AS `qt_vaga_total`
 FROM   (curso2019 `curso` 
 JOIN   ies2019 `ies`) 
