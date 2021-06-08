@@ -768,7 +768,10 @@ qt_insc_vaga_total,
 qt_matricula_total,
 qt_concluinte_total,
 qt_vaga_total,
-SG_IES
+CASE 
+	WHEN SG_IES IS NULL THEN no_ies
+	ELSE SG_IES
+END AS SG_IES
 FROM `fato` ;
 
 -- --------------------------------------------------------
