@@ -734,6 +734,7 @@ CREATE TABLE fato
 , qt_matricula_total BIGINT
 , qt_concluinte_total BIGINT
 , qt_vaga_total BIGINT
+, SG_IES varchar(20)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE OR REPLACE VIEW v_fato AS
@@ -766,7 +767,8 @@ nu_ano_censo,
 qt_insc_vaga_total,
 qt_matricula_total,
 qt_concluinte_total,
-qt_vaga_total
+qt_vaga_total,
+SG_IES
 FROM `fato` ;
 
 -- --------------------------------------------------------

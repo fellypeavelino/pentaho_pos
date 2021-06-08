@@ -536,7 +536,8 @@
 	   + IFNULL(`curso2014`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
 	   + IFNULL(`curso2014`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
 	   + IFNULL(`curso2014`.`QT_VAGAS_PROG_ESP_EAD`,0)
-	   ,",0", "") AS `qt_vaga_total`
+	   ,",0", "") AS `qt_vaga_total`,
+		ies2014.SGL_IES AS SG_IES
 FROM   (`curso2014` 
 JOIN   `ies2014`) 
 WHERE  (( `ies2014`.`co_uf_ies` = 26) 
@@ -628,7 +629,8 @@ WHERE  (( `ies2014`.`co_uf_ies` = 26)
 	   + IFNULL(`curso2015`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
 	   + IFNULL(`curso2015`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
 	   + IFNULL(`curso2015`.`QT_VAGAS_PROG_ESP_EAD`,0)
-	   ,",0", "") AS `qt_vaga_total`
+	   ,",0", "") AS `qt_vaga_total`,
+		ies2015.SGL_IES AS SG_IES
 FROM   (`curso2015` 
 JOIN   `ies2015`) 
 WHERE  (( `ies2015`.`co_uf_ies` = 26) 
@@ -720,7 +722,8 @@ AND  curso2015.CO_SITUACAO_CURSO = 1
 	   + IFNULL(`curso2016`.`QT_VAGAS_PROG_ESP_VESPERTINO`,0)
 	   + IFNULL(`curso2016`.`QT_VAGAS_PROG_ESP_NOTURNO`,0)
 	   + IFNULL(`curso2016`.`QT_VAGAS_PROG_ESP_EAD`,0)
-	   ,",0", "") AS `qt_vaga_total`
+	   ,",0", "") AS `qt_vaga_total`,
+		ies2016.SGL_IES AS SG_IES
 FROM   (`curso2016` 
 JOIN   `ies2016`) 
 WHERE  (( `ies2016`.`co_uf_ies` = 26) 
@@ -827,7 +830,8 @@ AND  curso2016.CO_SITUACAO_CURSO = 1
 	   + IFNULL(`curso2017`.`QT_VAGAS_ANUAL_VESPERTINO`,0)
 	   + IFNULL(`curso2017`.`QT_VAGAS_ANUAL_NOTURNO`,0)
 	   + IFNULL(`curso2017`.`QT_VAGAS_ANUAL_EAD`,0)
-	   ,",0", "") AS `qt_vaga_total`
+	   ,",0", "") AS `qt_vaga_total`,
+		ies2017.SG_IES
 FROM   (`curso2017` 
 JOIN   `ies2017`) 
 WHERE  (( `ies2017`.`co_uf` = 26) 
@@ -934,7 +938,8 @@ WHERE  (( `ies2017`.`co_uf` = 26)
 	   + IFNULL(`curso2018`.`QT_VAGAS_ANUAL_VESPERTINO`,0)
 	   + IFNULL(`curso2018`.`QT_VAGAS_ANUAL_NOTURNO`,0)
 	   + IFNULL(`curso2018`.`QT_VAGAS_ANUAL_EAD`,0)
-	   ,",0", "") AS `qt_vaga_total`
+	   ,",0", "") AS `qt_vaga_total`,
+		ies2018.SG_IES
 FROM   (`curso2018` 
 JOIN   `ies2018`) 
 WHERE  (( `ies2018`.`co_uf` = 26) 
@@ -1041,7 +1046,8 @@ WHERE  (( `ies2018`.`co_uf` = 26)
 	   + IFNULL(`curso`.`QT_VAGAS_ANUAL_VESPERTINO`,0)
 	   + IFNULL(`curso`.`QT_VAGAS_ANUAL_NOTURNO`,0)
 	   + IFNULL(`curso`.`QT_VAGAS_ANUAL_EAD`,0)
-	   ,",0", "") AS `qt_vaga_total`
+	   ,",0", "") AS `qt_vaga_total`,
+		ies.SG_IES
 FROM   (curso2019 `curso` 
 JOIN   ies2019 `ies`) 
 WHERE  (( `ies`.`co_uf` = 26) 
@@ -1160,6 +1166,10 @@ WHERE  (( `ies`.`co_uf` = 26)
       <field>
         <column_name>qt_vaga_total</column_name>
         <stream_name>qt_vaga_total</stream_name>
+      </field>
+      <field>
+        <column_name>SG_IES</column_name>
+        <stream_name>SG_IES</stream_name>
       </field>
     </fields>
     <attributes/>
