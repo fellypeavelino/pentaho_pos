@@ -20,6 +20,11 @@ SISTEMA DE INFORMAÇÃO
 SISTEMAS DE INFORMAÇÃO
 SISTEMAS PARA INTERNET
 
+SELECT DISTINCT NO_CURSO FROM `curso2014` 
+WHERE `NO_OCDE_AREA_ESPECIFICA` = 'computação' 
+AND DS_NIVEL_ACADEMICO = 'Graduação' 
+AND NO_OCDE_AREA_GERAL = 'Ciências, matemática e computação' 
+AND CO_MUNICIPIO_CURSO = 2611606 ORDER BY `curso2014`.`NO_CURSO` ASC
 
 https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados/censo-da-educacao-superior
 
